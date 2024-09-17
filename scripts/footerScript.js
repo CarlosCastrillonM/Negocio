@@ -1,12 +1,9 @@
 // Función para cargar el footer
-function cargarFooter() {
+function loadFooter() {
     fetch('../componentes/footer.html')
         .then(response => response.text())  // Obtener el contenido del archivo como texto
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;  // Insertar el contenido en el contenedor
         })
-        .catch(error => console.error('Error al cargar el footer:', error));
+        .catch(error => console.error('Error loading footer:', error));
 }
-
-// Llamar a la función para cargar el footer al cargar la página
-window.onload = cargarFooter;
