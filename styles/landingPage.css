@@ -2,18 +2,42 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: #333;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 100vw;
+    display: flex;
+    /* align-items: center; */
+    justify-self: center;
+    background-color: blueviolet;
+}
+
+.slider-section img {
+    width: 200px;
+}
+
+
+
+
+/* 
+.wrapper-advertisings {
+    width: 100vw;
+    height: auto;
 }
 
 @media (max-width: 768px) {
 
-    #image-landingPage {
-        width: 100vw;
+    .card-image {
+        width: 100%;
         height: auto;
     }
 
@@ -21,9 +45,9 @@ body {
 
 @media (min-width: 769px) {
     
-    #image-landingPage {
-        width: 100vw;
+    .card-image {
+        width: 100%;
         height: calc(100vh - 128px);
     }
 
-}
+} */
