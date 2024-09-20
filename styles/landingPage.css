@@ -7,7 +7,7 @@
 
 body {
     background-color: #333;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .container {
@@ -15,32 +15,91 @@ body {
     display: flex;
     /* align-items: center; */
     justify-content: center;
-    justify-self: center;
-    background-color: blueviolet;
+    background-color: rgb(37, 0, 71);
 }
 
 .wrapper-advertisings {
-    width: 50%;
+    position: relative;
+    width: 90%;
     height: auto;
     background-color: #e96c6c;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
+    border-radius: 15px;
+    overflow: hidden;
 }
+
+.card-wrapper {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    /* border: solid thin rgb(255, 0, 234); */
+}
+
+.slider-section {
+    width: calc(100% / 5);
+    height: 100%;
+}
+
+.slider-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Para que las imagenes no pierdan calidad*/
+    border-radius: 15px;
+}
+
+.btn-left,
+.btn-right {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.466);
+    border-radius: 50%;
+    padding: 1%;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff81;
+    transform: translate(0, -50%);
+    transition: 0.5s ease;
+    user-select: none;
+}
+
+.btn-left {
+    left: 10px;
+}
+
+.btn-right {
+    right: 10px;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    background-color: #070727;
+    color: #fff;
+}
+
+
+
 
 @media (min-width: 769px) {
     
-    .slider-section img {
+    /* .slider-section img {
         width: 100%;
-        height: calc(100vh - 6.5vw);
+        height: 100%;
+    } */
+
+    .container {
+        height: calc(100vh - 7.5vw);
     }
 
 }
 
 @media (max-width: 768px) {
 
-    .slider-section img {
+    /* .slider-section img {
         width: 100%;
-        height: auto;
-    }
+        height: 100%;
+    } */
 
 }
 
