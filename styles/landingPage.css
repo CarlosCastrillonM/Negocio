@@ -7,22 +7,41 @@
 
 body {
     background-color: #333;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+    overflow-x: hidden;
 }
 
 .container {
-    height: 100vw;
+    width: 100vw;
     display: flex;
     /* align-items: center; */
+    justify-content: center;
     justify-self: center;
     background-color: blueviolet;
 }
 
-.slider-section img {
-    width: 200px;
+.wrapper-advertisings {
+    width: 50%;
+    height: auto;
+    background-color: #e96c6c;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
+}
+
+@media (min-width: 769px) {
+    
+    .slider-section img {
+        width: 100%;
+        height: calc(100vh - 6.5vw);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .slider-section img {
+        width: 100%;
+        height: auto;
+    }
+
 }
 
 
