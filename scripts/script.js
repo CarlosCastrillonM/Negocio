@@ -13,11 +13,32 @@ console.log("La cantidad total de elementos que hay en el slider: " + sliderSect
 btnLeft.addEventListener("click", e => moveToLeft())
 btnRight.addEventListener("click", e => moveToRight())
 
-function moveToRight() {    // Concatenar la unidad '%' a la variable sectionVisibleslider.style.transform = `translate(${sectionVisible}%)`;
-    slider.style.transform = "translate(" + sectionVisible + "%)"; //esta es otra forma de hacerlo
+function moveToRight() {    //Esta es otra forma de hacerlo    slider.style.transform = "translate(" + sectionVisible + "%)"; 
+    operation += sectionVisible;
+    
+    if (operation <= sectionVisible*(sliderSection.length)) {
+        operation = 0;
+        slider.style.transform = `translate(${operation}%)`;
+        slider.style.transition = "none";
+
+    } else {
+        slider.style.transform = `translate(${operation}%)`;   //Concatenar la unidad '%' a la variable sectionVisible
+        slider.style.transition = "all ease 0.6s";
+    }
+    
 }
 
 function moveToLeft() {
-    slider.style.transform = "translate(" + -sectionVisible + "%)";
+    operation -= sectionVisible;
+
+    if (operation > 0) {
+        operation = sectionVisible*(sliderSection.length-1);
+        slider.style.transform = `translate(${operation}%)`;
+        slider.style.transition = "none";
+        
+    } else {
+        slider.style.transform = `translate(${operation}%)`;
+        slider.style.transition = "all ease 0.6s";
+    }
     
 }

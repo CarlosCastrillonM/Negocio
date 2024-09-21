@@ -29,14 +29,14 @@ body {
 }
 
 .card-wrapper {
-    width: 500%;
+    width: 500%;    /*Si voy a añadir mas imagenes debo poner aca el resultado de la cantidad de imagenes por 100*/
     height: 100%;
     display: flex;
     /* border: solid thin rgb(255, 0, 234); */
 }
 
 .slider-section {
-    width: calc(100% / 5);
+    width: calc(100% / 5);  /*Si voy a añadir mas imagenes debo poner a dividir la cantidad de las imagenes*/
     height: 100%;
 }
 
