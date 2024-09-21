@@ -1,14 +1,24 @@
 const btnLeft = document.querySelector(".btn-left"),
         btnRight = document.querySelector(".btn-right"),
         slider = document.querySelector("#slider"),
-        sliderSection = document.querySelectorAll(".slider-section");
+        sliderSection = document.querySelectorAll(".slider-section"),
+        cardWrapper = document.querySelector(".card-wrapper");
 
 let sectionVisible = (-1/sliderSection.length)*100;
 let operation = 0;
 
+
+
 console.log(sliderSection);
 console.log(sectionVisible);
-console.log("La cantidad total de elementos que hay en el slider: " + sliderSection.length)
+console.log("La cantidad total de elementos que hay en el slider: " + sliderSection.length);
+
+cardWrapper.style.width = `${sliderSection.length*100}%`;
+
+var x = document.getElementsByClassName('slider-section');
+for(let i=0; i< x.length;i++){
+   x[i].style.width = `${-sectionVisible}%`;
+}
 
 btnLeft.addEventListener("click", e => moveToLeft());
 btnRight.addEventListener("click", e => moveToRight());
