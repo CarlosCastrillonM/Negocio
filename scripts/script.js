@@ -6,8 +6,7 @@ const btnLeft = document.querySelector(".btn-left"),
 
 let sectionVisible = (-1/sliderSection.length)*100;
 let operation = 0;
-
-
+const delay = 4000;
 
 console.log(sliderSection);
 console.log(sectionVisible);
@@ -23,9 +22,9 @@ for(let i=0; i< x.length;i++){
 btnLeft.addEventListener("click", e => moveToLeft());
 btnRight.addEventListener("click", e => moveToRight());
 
-setInterval(() => {
+let idInterval = setInterval(() => {
     moveToRight();
-}, 2000);
+}, delay);
 
 function moveToRight() {    //Esta es otra forma de hacerlo    slider.style.transform = "translate(" + sectionVisible + "%)"; 
     operation += sectionVisible;
@@ -39,7 +38,8 @@ function moveToRight() {    //Esta es otra forma de hacerlo    slider.style.tran
         slider.style.transform = `translate(${operation}%)`;   //Concatenar la unidad '%' a la variable sectionVisible
         slider.style.transition = "all ease 0.6s";
     }
-    
+    clearInterval(idInterval);
+    idInterval = setInterval(() => moveToRight(), delay)
 }
 
 function moveToLeft() {
@@ -54,5 +54,6 @@ function moveToLeft() {
         slider.style.transform = `translate(${operation}%)`;
         slider.style.transition = "all ease 0.6s";
     }
-    
+    clearInterval(idInterval);
+    idInterval = setInterval(() => moveToRight(), delay)
 }
