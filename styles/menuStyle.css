@@ -1,5 +1,6 @@
 
 .menu-container {
+    position: sticky;
     padding-top: 20px;
     /* background-color: green; */
 }

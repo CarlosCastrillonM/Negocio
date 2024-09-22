@@ -8,16 +8,13 @@ let sectionVisible = (-1/sliderSection.length)*100;
 let operation = 0;
 const delay = 4000;
 
-console.log(sliderSection);
-console.log(sectionVisible);
-console.log("La cantidad total de elementos que hay en el slider: " + sliderSection.length);
-
 cardWrapper.style.width = `${sliderSection.length*100}%`;
 
-var x = document.getElementsByClassName('slider-section');
-for(let i=0; i< x.length;i++){
-   x[i].style.width = `${-sectionVisible}%`;
-}
+var x = document.querySelectorAll('.slider-section');
+
+x.forEach(element => {
+    element.style.width = `${-sectionVisible}%`;
+});
 
 btnLeft.addEventListener("click", e => moveToLeft());
 btnRight.addEventListener("click", e => moveToRight());
